@@ -8,7 +8,7 @@ refactor <- function(data_file, k, covarfile = NULL, t = 500, numcomp = NULL, st
 
     print('Reading input files...');
 
-    O = as.matrix(read.table(data_file))
+    O = as.matrix(data_file)
     sample_id <- O[1, -1] # extract samples ID
     O <- O[-1,] # remove sample ID from matrix
     cpgnames <- O[, 1] ## set rownames
