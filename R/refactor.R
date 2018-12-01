@@ -86,7 +86,8 @@ refactor <- function(data_file, k, covarfile = NULL, t = 500, numcomp = NULL, st
     write(t(score[,1:numcomp]), file=components_filename, ncol=numcomp)
     
     print('ReFACTor is Done');
-    result <- list(refactor_components=score[,1:numcomp], ranked_list=ranked_list, standard_pca=first_score) 
+    result <- list(refactor_components=score[,1:numcomp], ranked_list=ranked_list, standard_pca=first_score, 
+                   RankedProbeNames=t(cpgnames[ranked_list])) 
     return(result)
 
 }
